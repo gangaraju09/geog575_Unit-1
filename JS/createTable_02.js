@@ -67,10 +67,10 @@ window.onload = initialize(); */
 
 //define an array of objects for cities and population
 
-function cities (){   // defining function 
+function cities (){
 
 
-    var citypop = [       // creating required elements in the table
+    var citypop = [
       { city: 'Madison',
                 population: 233209
             },
@@ -87,65 +87,30 @@ function cities (){   // defining function
                 population: 27244
             },
     ]
-     //create the table skeleton
+     //create the table element
         var table = document.createElement("table");
-          //create a table header row
-        var headerRow = document.createElement("tr");
-
-        //add the cities column        
-         var cityHeader = document.createElement("th"); 
-        cityHeader.innerHTML = "City";
-        headerRow.appendChild(cityHeader);
-    
-        //add the "Population" column
-        var popHeader = document.createElement("th");
-        popHeader.innerHTML = "Population";
-        headerRow.appendChild(popHeader);
-
-         //add the "city size" column
-         var sizeHeader = document.createElement("th");
-         sizeHeader.innerHTML = "City Size";
-         headerRow.appendChild(sizeHeader);
         
-        //add row to table
-        table.appendChild(headerRow)
-
         //how to push an element into the table
-    var kennosha = {};
+    var middleton = {};
         //add each property to the object
-        kennosha.city = 'kennosha';
-        kennosha.population = 99606;
+        middleton.city = 'Middleton';
+        middleton.population = 233209;
     
         //push the city object into the array
-        citypop.push(kennosha);
+        citypop.push(middleton);
     
     //create a loop to itirate each row in city pop to new table
     for(i=0;i<citypop.length;i++){
-      var tr = document.createElement('tr')  // table for each row iteration
+      var tr = document.createElement('tr')
       table.appendChild(tr)
     
-    //add city values in city column
     var city = document.createElement('td')
     city.innerHTML = citypop[i].city
     tr.appendChild(city)
     
-    //add population values in population column
     var pop = document.createElement('td')
     pop.innerHTML = citypop[i].population
     tr.appendChild(pop)
-    
-    // create condition statement for city size
-    var citySize = document.createElement('td')
-    if(citypop[i].population<=100000){
-      citySize.innerHTML = 'Small'
-      tr.appendChild(citySize)
-    }else if(citypop[i].population<=500000){
-      citySize.innerHTML = 'Medium'
-      tr.appendChild(citySize)
-    }else if(citypop[i].population>500000){
-      citySize.innerHTML = 'Large'
-      tr.appendChild(citySize)
-    }
     
     
     }
